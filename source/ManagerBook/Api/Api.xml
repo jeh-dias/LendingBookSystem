@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api</name>
+    </assembly>
+    <members>
+        <member name="T:ManagerBooks.Applications.Controllers.BookController">
+            <summary>
+            Esta classe é responsável por implementar todos os métodos
+            da api de livros
+            </summary>
+        </member>
+        <member name="M:ManagerBooks.Applications.Controllers.BookController.GetAll">
+            <summary>
+            Este método é responsável por retornar todos da entidade livro
+            que estão no banco de dados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ManagerBooks.Applications.Controllers.BookController.GetByGuid(System.Guid)">
+            <summary>
+            Este método é responsável por retornar
+            um objeto da entidade livro, de acordo com o valor
+            do id passa como parâmetro
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ManagerBooks.Applications.Controllers.BookController.Insert(Domain.Book)">
+            <summary>
+            Este método é responsável por inserir dados de livro
+            </summary>
+            <param name="book"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ManagerBooks.Applications.Controllers.BookController.Put(Domain.Book)">
+            <summary>
+            Este método é responsável por atualizar um livro
+            </summary>
+            <param name="book"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ManagerBooks.Applications.Controllers.BookController.Delete(Domain.Book)">
+            <summary>
+            Este método é responsável por remover um livro
+            </summary>
+            <param name="book"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.PersonController.GetAll">
+            <summary>
+            Este método é responsável por retornar todos da entidade livro
+            que estão no banco de dados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.PersonController.GetByGuid(System.Guid)">
+            <summary>
+            Este método é responsável por retornar
+            um objeto da entidade livro, de acordo com o valor
+            do id passa como parâmetro
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.PersonController.Insert(Domain.Person)">
+            <summary>
+            Este método é responsável por inserir dados de livro
+            </summary>
+            <param name="Person"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.PersonController.Put(Domain.Person)">
+            <summary>
+            Este método é responsável por atualizar um livro
+            </summary>
+            <param name="Person"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.PersonController.Delete(Domain.Person)">
+            <summary>
+            Este método é responsável por remover um livro
+            </summary>
+            <param name="Person"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
