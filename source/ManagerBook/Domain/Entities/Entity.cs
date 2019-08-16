@@ -7,7 +7,7 @@ namespace ManagerBooks.Domain
 {
     /// <summary>
     /// Classe responsável pelo id do tipo guid,
-    /// foi definido como guid para o id do banco de dados não ser exposto
+    /// foi definido como guid para o id do banco de dados não ser exposto teste
     /// </summary>
     public abstract class Entity
     {
