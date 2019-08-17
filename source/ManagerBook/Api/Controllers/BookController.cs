@@ -54,7 +54,7 @@ namespace ManagerBooks.Applications.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public ActionResult<Book> GetByGuid(int id)
+        public ActionResult<Book> GetByGuid(Guid id)
         {
 
             try

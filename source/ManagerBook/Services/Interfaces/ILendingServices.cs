@@ -11,6 +11,6 @@ namespace Services.Interfaces
         Lending Update(Lending lending);
         IEnumerable<Lending> GetAll();
 
-        Lending GetById(int id);
+        Lending GetById(Guid id);
     }
 }

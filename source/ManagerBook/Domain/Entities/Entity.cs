@@ -11,8 +11,7 @@ namespace ManagerBooks.Domain
     /// </summary>
     public abstract class Entity
     {
-        [Key]
         public int id { get; set; }
-        //public Guid guid { get; set; }
+        public Guid guid { get; set; }
     }
 }

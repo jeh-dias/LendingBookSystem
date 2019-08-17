@@ -49,7 +49,7 @@ namespace ManagerBooks.Services
         /// </summary>
         /// <param name="guid"></param>
         /// <returns></returns>
-        public Person GetById(int id)
+        public Person GetById(Guid id)
         {
             return _personRepository.GetById(id);
         }

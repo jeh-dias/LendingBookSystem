@@ -79,7 +79,7 @@ namespace ManagerBooks.Repository
             return obj;
         }
 
-        public virtual T GetById(int id)
+        public virtual T GetById(Guid id)
         {
             return Conn.Get<T>(id);
         }

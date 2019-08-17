@@ -52,7 +52,7 @@ namespace ManagerBooks.Applications.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public ActionResult<Lending> GetById(int id)
+        public ActionResult<Lending> GetById(Guid id)
         {
             try
             {

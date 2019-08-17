@@ -50,7 +50,7 @@ namespace Api.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public ActionResult<Person> GetByGuid(int id)
+        public ActionResult<Person> GetByGuid(Guid id)
         {
 
             try
@@ -76,7 +76,7 @@ namespace Api.Controllers
         {
             try
             {
-                //person.guid = Guid.NewGuid();
+                person.guid = Guid.NewGuid();
                 _logger.LogInformation("Received post request");
                 return Ok(_personServices.Insert(person));
             }
