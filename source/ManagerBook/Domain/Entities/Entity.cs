@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -12,6 +13,7 @@ namespace ManagerBooks.Domain
     public abstract class Entity
     {
         public int id { get; set; }
-        public Guid guid { get; set; }
+        [Key]
+        public Guid key { get; set; }
     }
 }

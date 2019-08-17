@@ -51,16 +51,16 @@ namespace ManagerBooks.Applications.Controllers
         /// um objeto da entidade livro, de acordo com o valor
         /// do id passa como parâmetro
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="key"></param>
         /// <returns></returns>
-        [HttpGet("{id}")]
-        public ActionResult<Book> GetByGuid(Guid id)
+        [HttpGet("{key}")]
+        public ActionResult<Book> GetByGuid(Guid key)
         {
 
             try
             {
                 _logger.LogInformation("Received get request");
-                var books = _bookServices.GetById(id);
+                var books = _bookServices.GetById(key);
                 return Ok(books);
             }
             catch (Exception exception)
@@ -80,7 +80,6 @@ namespace ManagerBooks.Applications.Controllers
         {
             try
             {
-                //book.guid = Guid.NewGuid();
                 _logger.LogInformation("Received post request");
                 return Ok(_bookServices.Insert(book));
             }

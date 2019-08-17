@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using ManagerBooks.Applications.Extensions;
 using ManagerBooks.Repository;
 using ManagerBooks.Repository.Interfaces;
 using ManagerBooks.Services;
@@ -37,32 +38,33 @@ namespace Api
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             DependencyInjections(services);
+            services.SwaggerServices();
 
             // Configurando o serviço de documentação do Swagger
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1",
-                    new Info
-                    {
-                        Title = "ManagerPerson.Api",
-                        Version = "v1",
-                        Description = "Sistema para empréstimo de livros",
-                        Contact = new Contact
-                        {
-                            Name = "Jéssica Dias",
-                            Url = "https://github.com/jeh-dias"
-                        }
-                    });
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("v1",
+            //        new Info
+            //        {
+            //            Title = "ManagerPerson.Api",
+            //            Version = "v1",
+            //            Description = "Sistema para empréstimo de livros",
+            //            Contact = new Contact
+            //            {
+            //                Name = "Jéssica Dias",
+            //                Url = "https://github.com/jeh-dias"
+            //            }
+            //        });
 
-                string caminhoAplicacao =
-                    PlatformServices.Default.Application.ApplicationBasePath;
-                string nomeAplicacao =
-                    PlatformServices.Default.Application.ApplicationName;
-                string caminhoXmlDoc =
-                    Path.Combine(caminhoAplicacao, $"{nomeAplicacao}.xml");
+            //    string caminhoAplicacao =
+            //        PlatformServices.Default.Application.ApplicationBasePath;
+            //    string nomeAplicacao =
+            //        PlatformServices.Default.Application.ApplicationName;
+            //    string caminhoXmlDoc =
+            //        Path.Combine(caminhoAplicacao, $"{nomeAplicacao}.xml");
 
-                c.IncludeXmlComments(caminhoXmlDoc);
-            });
+            //    c.IncludeXmlComments(caminhoXmlDoc);
+            //});
         }
 
         private void DependencyInjections(IServiceCollection services)
@@ -85,15 +87,7 @@ namespace Api
 
             app.UseMvc();
 
-            // Ativando middlewares para uso do Swagger
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json",
-                    "Sistema de empréstimos de livros");
-
-                c.RoutePrefix = "docs";
-            });
+            app.SwaggerApplication();
         }
     }
 }

@@ -79,9 +79,19 @@ namespace ManagerBooks.Repository
             return obj;
         }
 
-        public virtual T GetById(Guid id)
+        public virtual T GetById(Guid key)
         {
-            return Conn.Get<T>(id);
+            T obj = null;
+            try
+            {
+                
+                obj = Conn.Get<T>(key.ToString());
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError(exception, exception.Message);
+            }
+            return obj;
         }
 
         public void Dispose() => Conn.Dispose();

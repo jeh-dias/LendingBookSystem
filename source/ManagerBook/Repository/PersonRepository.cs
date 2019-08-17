@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using Dapper;
+using Domain;
 using ManagerBooks.Repository.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -14,11 +15,21 @@ namespace ManagerBooks.Repository
         public PersonRepository(IConfiguration config, ILogger<Repository<Person>> logger) : base(config, logger)
         {
         }
-        public List<Person> GetAll()
+        public override Person GetById(Guid key)
         {
-            var query = "SELECT * FROM person";
-            var teste = ExecuteQuery(query).ToList();
-            return teste;
+            Person obj = null;
+            try
+            {
+                var query = "SELECT * FROM Person WHERE key = @key";
+                var parameters = new DynamicParameters();
+                parameters.Add("@key", key);
+                obj = ExecuteQuery(query, parameters).FirstOrDefault();
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError(exception, exception.Message);
+            }
+            return obj;
         }
     }
 }

@@ -76,7 +76,6 @@ namespace Api.Controllers
         {
             try
             {
-                person.guid = Guid.NewGuid();
                 _logger.LogInformation("Received post request");
                 return Ok(_personServices.Insert(person));
             }

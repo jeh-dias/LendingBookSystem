@@ -62,6 +62,7 @@ namespace ManagerBooks.Services
         /// <returns></returns>
         public Person Insert(Person person)
         {
+            person.key = Guid.NewGuid();
             return _personRepository.Insert(person);
         }
 

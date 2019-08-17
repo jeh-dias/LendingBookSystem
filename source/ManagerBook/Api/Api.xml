@@ -23,7 +23,7 @@
             um objeto da entidade livro, de acordo com o valor
             do id passa como parâmetro
             </summary>
-            <param name="id"></param>
+            <param name="key"></param>
             <returns></returns>
         </member>
         <member name="M:ManagerBooks.Applications.Controllers.BookController.Insert(Domain.Book)">
@@ -45,6 +45,38 @@
             Este método é responsável por remover um livro
             </summary>
             <param name="book"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ManagerBooks.Applications.Controllers.LendingController">
+            <summary>
+            Classe da api responsável pela interação com a classe de serviço
+            </summary>
+        </member>
+        <member name="M:ManagerBooks.Applications.Controllers.LendingController.GetAll">
+            <summary>
+            Método responsável por interagir com o método GetAll do serviço
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ManagerBooks.Applications.Controllers.LendingController.GetById(System.Guid)">
+            <summary>
+             Método responsável por interagir com o método GetById do serviço
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ManagerBooks.Applications.Controllers.LendingController.Post(Domain.Lending)">
+            <summary>
+            Método responsável por interagir com o método Insert do serviço
+            </summary>
+            <param name="lending"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ManagerBooks.Applications.Controllers.LendingController.Put(Domain.Lending)">
+            <summary>
+            Método responsável por interagir com o método Update do serviço
+            </summary>
+            <param name="lending"></param>
             <returns></returns>
         </member>
         <member name="M:Api.Controllers.PersonController.GetAll">
