@@ -1,6 +1,6 @@
-﻿using ManagerBooks.Domain;
+﻿using Dapper.Contrib.Extensions;
+using ManagerBooks.Domain;
 using System;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain
 {
