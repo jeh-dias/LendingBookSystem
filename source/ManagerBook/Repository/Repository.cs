@@ -13,6 +13,10 @@ using System.Text;
 
 namespace ManagerBooks.Repository
 {
+    /// <summary>
+    /// Esta classe é responsável por padrão repositório de dados
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class Repository<T> : IRepository<T> where T : Entity
     {
         private readonly IConfiguration _config;
@@ -26,6 +30,12 @@ namespace ManagerBooks.Repository
 
         protected IDbConnection Conn => new NpgsqlConnection(_config.GetConnectionString("DefaultConnection"));
 
+        /// <summary>
+        /// Este método é responsável por receber a consulta e os parâmetros desejados 
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public virtual List<T> ExecuteQuery(string query, DynamicParameters parameters = null)
         {
             try
@@ -49,6 +59,11 @@ namespace ManagerBooks.Repository
             }
         }
 
+        /// <summary>
+        /// Este método é responsável por chamar o método insert da biblioteca dapper contrib
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public virtual T Insert(T obj)
         {
             try
@@ -63,29 +78,48 @@ namespace ManagerBooks.Repository
             return obj;
         }
 
+        /// <summary>
+        /// Este método é responsável por chamar o método delete da biblioteca dapper contrib
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public virtual bool Remove(T obj)
         {
             return Conn.Delete(obj);
         }
 
+        /// <summary>
+        /// Este método é responsável por chamar o método GetAll da biblioteca dapper contrib
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public virtual List<T> GetAll()
         {
             return Conn.GetAll<T>().ToList();
         }
 
+        /// <summary>
+        ///  Este método é responsável por chamar o método Update da biblioteca dapper contrib
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public virtual T Update(T obj)
         {
             Conn.Update(obj);
             return obj;
         }
 
-        public virtual T GetById(Guid key)
+        /// <summary>
+        /// Este método é responsável por buscar o objeto correspondente ao guid passado por parâmetro
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public virtual T GetByKey(Guid key)
         {
             T obj = null;
             try
             {
-                
-                obj = Conn.Get<T>(key.ToString());
+                obj = Conn.QueryFirstOrDefault<T>($"SELECT * FROM {typeof(T).Name}", new { key = key });
             }
             catch (Exception exception)
             {
@@ -94,16 +128,19 @@ namespace ManagerBooks.Repository
             return obj;
         }
 
+        /// <summary>
+        /// Este método é responsável por finalizar a conexão, caso tenha necessidade
+        /// </summary>
         public void Dispose() => Conn.Dispose();
 
+        /// <summary>
+        /// Este método é responsável por chamar o método delete da biblioteca dapper contrib
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public bool Delete(T obj)
         {
             return Conn.Delete<T>(obj);
         }
-
-        //public T GetByGuid(Guid guid)
-        //{
-        //    return Conn.Get<T>(guid);
-        //}
     }
 }

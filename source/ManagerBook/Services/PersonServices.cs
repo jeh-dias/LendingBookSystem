@@ -49,9 +49,9 @@ namespace ManagerBooks.Services
         /// </summary>
         /// <param name="guid"></param>
         /// <returns></returns>
-        public Person GetById(Guid id)
+        public Person GetByKey(Guid key)
         {
-            return _personRepository.GetById(id);
+            return _personRepository.GetByKey(key);
         }
 
         /// <summary>

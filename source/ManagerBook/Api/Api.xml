@@ -17,7 +17,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:ManagerBooks.Applications.Controllers.BookController.GetByGuid(System.Guid)">
+        <member name="M:ManagerBooks.Applications.Controllers.BookController.GetByKey(System.Guid)">
             <summary>
             Este método é responsável por retornar
             um objeto da entidade livro, de acordo com o valor
@@ -58,7 +58,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:ManagerBooks.Applications.Controllers.LendingController.GetById(System.Guid)">
+        <member name="M:ManagerBooks.Applications.Controllers.LendingController.GetByKey(System.Guid)">
             <summary>
              Método responsável por interagir com o método GetById do serviço
             </summary>
@@ -86,7 +86,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Api.Controllers.PersonController.GetByGuid(System.Guid)">
+        <member name="M:Api.Controllers.PersonController.GetByKey(System.Guid)">
             <summary>
             Este método é responsável por retornar
             um objeto da entidade livro, de acordo com o valor

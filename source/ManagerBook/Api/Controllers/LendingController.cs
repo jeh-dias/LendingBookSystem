@@ -52,12 +52,12 @@ namespace ManagerBooks.Applications.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public ActionResult<Lending> GetById(Guid id)
+        public ActionResult<Lending> GetByKey(Guid key)
         {
             try
             {
                 _logger.LogInformation("Received get request");
-                Lending lending = _lendingServices.GetById(id);
+                Lending lending = _lendingServices.GetByKey(key);
                 return Ok(lending);
             }
             catch (Exception exception)

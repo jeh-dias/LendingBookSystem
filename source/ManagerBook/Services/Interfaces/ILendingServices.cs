@@ -10,7 +10,6 @@ namespace Services.Interfaces
         Lending Insert(Lending lending);
         Lending Update(Lending lending);
         IEnumerable<Lending> GetAll();
-
-        Lending GetById(Guid id);
+        Lending GetByKey(Guid key);
     }
 }

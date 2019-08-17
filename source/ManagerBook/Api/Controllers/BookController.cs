@@ -54,13 +54,13 @@ namespace ManagerBooks.Applications.Controllers
         /// <param name="key"></param>
         /// <returns></returns>
         [HttpGet("{key}")]
-        public ActionResult<Book> GetByGuid(Guid key)
+        public ActionResult<Book> GetByKey(Guid key)
         {
 
             try
             {
                 _logger.LogInformation("Received get request");
-                var books = _bookServices.GetById(key);
+                var books = _bookServices.GetByKey(key);
                 return Ok(books);
             }
             catch (Exception exception)

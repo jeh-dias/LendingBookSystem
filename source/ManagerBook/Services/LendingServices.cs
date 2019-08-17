@@ -42,9 +42,9 @@ namespace ManagerBooks.Services
             return _lendingRepository.GetAll();
         }
 
-        public Lending GetById(Guid id)
+        public Lending GetByKey(Guid key)
         {
-            return _lendingRepository.GetById(id);
+            return _lendingRepository.GetByKey(key);
         }
     }
 }

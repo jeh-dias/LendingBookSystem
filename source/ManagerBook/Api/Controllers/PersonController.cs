@@ -50,13 +50,13 @@ namespace Api.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public ActionResult<Person> GetByGuid(Guid id)
+        public ActionResult<Person> GetByKey(Guid key)
         {
 
             try
             {
                 _logger.LogInformation("Received get request");
-                var persons = _personServices.GetById(id);
+                var persons = _personServices.GetByKey(key);
                 return Ok(persons);
             }
             catch (Exception exception)
