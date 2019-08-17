@@ -10,6 +10,11 @@
 6. No momento da entrega, o cliente poderá incluir no sistema feedbacks sobre o item que pegou emprestado.
 7. O sistema deverá dar suporte á bloqueio de empréstimo para um item.
 
+## Api disponível no azure
+https://lending.azurewebsites.net
+
+## Api com Swagger disponível no azure
+https://lending.azurewebsites.net/docs
 
 ## Banco de dados postgres disponível no Google Cloud Plataform 
 1. Endereço público 35.199.92.78
