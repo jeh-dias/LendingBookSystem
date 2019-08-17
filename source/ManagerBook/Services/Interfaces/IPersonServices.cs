@@ -12,7 +12,7 @@ namespace ManagerBooks.Services.Interfaces
     {
         bool Delete(Person Person);
         List<Person> GetAll();
-        Person GetById(Guid guid);
+        Person GetById(int guid);
         Person Insert(Person Person);
         Person Update(Person Person);
     }

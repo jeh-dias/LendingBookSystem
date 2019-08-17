@@ -15,7 +15,7 @@ namespace Domain
             this.isbn = isbn;
             this.name = name;
             this.author = author;
-            this.guid = System.Guid.NewGuid();
+            //this.guid = System.Guid.NewGuid();
         }
 
         public Book()

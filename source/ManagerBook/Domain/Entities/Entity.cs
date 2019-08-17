@@ -13,6 +13,6 @@ namespace ManagerBooks.Domain
     {
         [Key]
         public int id { get; set; }
-        public Guid guid { get; set; }
+        //public Guid guid { get; set; }
     }
 }

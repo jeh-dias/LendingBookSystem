@@ -54,7 +54,7 @@ namespace ManagerBooks.Applications.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public ActionResult<Book> GetByGuid(Guid id)
+        public ActionResult<Book> GetByGuid(int id)
         {
 
             try
@@ -66,7 +66,7 @@ namespace ManagerBooks.Applications.Controllers
             catch (Exception exception)
             {
                 _logger.LogError(exception, exception.Message);
-                return new BadRequestResult();
+                return BadRequest();
             }
         }
 
@@ -80,7 +80,7 @@ namespace ManagerBooks.Applications.Controllers
         {
             try
             {
-                book.guid = Guid.NewGuid();
+                //book.guid = Guid.NewGuid();
                 _logger.LogInformation("Received post request");
                 return Ok(_bookServices.Insert(book));
             }
@@ -107,7 +107,7 @@ namespace ManagerBooks.Applications.Controllers
             catch (Exception exception)
             {
                 _logger.LogError(exception, exception.Message);
-                return new BadRequestResult();
+                return BadRequest();
             }
         }
 

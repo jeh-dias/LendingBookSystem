@@ -18,6 +18,7 @@ using Microsoft.Extensions.PlatformAbstractions;
 using Repository;
 using Repository.Interfaces;
 using Services;
+using Services.Interfaces;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace Api
@@ -68,8 +69,10 @@ namespace Api
         {
             services.AddSingleton<IPersonRepository, PersonRepository>();
             services.AddSingleton<IBookRepository, BookRepository>();
+            services.AddSingleton<ILendingRepository, LendingRepository>();
             services.AddTransient<IPersonServices, PersonServices>();
             services.AddTransient<IBookServices, BookServices>();
+            services.AddTransient<ILendingServices, LendingServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

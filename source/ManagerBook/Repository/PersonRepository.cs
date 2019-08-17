@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ManagerBooks.Repository
@@ -12,6 +13,12 @@ namespace ManagerBooks.Repository
     {
         public PersonRepository(IConfiguration config, ILogger<Repository<Person>> logger) : base(config, logger)
         {
+        }
+        public List<Person> GetAll()
+        {
+            var query = "SELECT * FROM person";
+            var teste = ExecuteQuery(query).ToList();
+            return teste;
         }
     }
 }

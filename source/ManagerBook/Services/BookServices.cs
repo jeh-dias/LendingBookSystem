@@ -32,9 +32,9 @@ namespace Services
             return _bookRepository.GetAll();
         }
 
-        public Book GetById(Guid guid)
+        public Book GetById(int guid)
         {
-            return _bookRepository.GetByGuid(guid);
+            return _bookRepository.GetById(guid);
         }
 
         public Book Insert(Book book)

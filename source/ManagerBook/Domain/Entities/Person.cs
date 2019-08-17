@@ -16,7 +16,6 @@ namespace Domain
         {
             this.name = name;
             this.email = email;
-            this.guid = Guid.NewGuid();
         }
 
         public Person() { }

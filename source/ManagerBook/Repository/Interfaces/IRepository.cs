@@ -11,6 +11,6 @@ namespace ManagerBooks.Repository.Interfaces
         bool Delete(T obj);
         List<T> GetAll();
         T Update(T obj);
-        T GetByGuid(Guid guid);
+        T GetById(int guid);
     }
 }
