@@ -1,5 +1,7 @@
 # Sistema para gerenciar empréstimos de livros
 
+[![Build status](https://ci.appveyor.com/api/projects/status/c05avthupjm0am8r?svg=true)](https://ci.appveyor.com/project/jeh-dias/lendingbooksystem)
+
 ## Funcionamento do Sistema
 
 1. O sistema contêm funcionalidades de cadastro completo do livro.
