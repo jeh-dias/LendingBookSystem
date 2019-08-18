@@ -47,6 +47,39 @@
             <param name="book"></param>
             <returns></returns>
         </member>
+        <member name="T:ManagerBooks.Applications.Controllers.DeliverController">
+            <summary>
+            Esta classe é responsável por receber objetos da entrega que vem do front
+            </summary>
+        </member>
+        <member name="M:ManagerBooks.Applications.Controllers.DeliverController.GetAll">
+            <summary>
+            Este método é responsável por interagir com a classe de serviço para listar
+            todas as entregas que existem no banco de dados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ManagerBooks.Applications.Controllers.DeliverController.GetByKey(System.Guid)">
+            <summary>
+            Este método é responsável por interagir com a classe de serviço para listar
+            a entrega que é correspondente ao guid passado por parâmetro
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ManagerBooks.Applications.Controllers.DeliverController.Post(Domain.Deliver)">
+            <summary>
+            Este método é responsável por interagir com a classe de serviço para inserir
+            a entrega no banco de dados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ManagerBooks.Applications.Controllers.DeliverController.Put(Domain.Deliver)">
+            <summary>
+            Este método é responsável por interagir com a classe de serviço para atualizar
+            a entrega no banco de dados
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:ManagerBooks.Applications.Controllers.LendingController">
             <summary>
             Classe da api responsável pela interação com a classe de serviço

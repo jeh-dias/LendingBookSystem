@@ -82,7 +82,7 @@ namespace Api.Controllers
             catch (Exception exception)
             {
                 _logger.LogError(exception, exception.Message);
-                return BadRequest(null);
+                return BadRequest();
             }
         }
 

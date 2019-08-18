@@ -53,6 +53,7 @@ namespace Business
         /// <returns></returns>
         private static DateTime InsertDateLending(Lending lending)
         {
+            lending.key = Guid.NewGuid();
             return lending.dateLending = DateTime.Now;
         }
     }

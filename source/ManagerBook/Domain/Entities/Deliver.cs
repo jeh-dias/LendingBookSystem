@@ -13,5 +13,7 @@ namespace Domain
     public class Deliver : Entity
     {
         public string Feedback { get; set; }
+
+        public DateTime DateDeliver { get; set; }
     }
 }

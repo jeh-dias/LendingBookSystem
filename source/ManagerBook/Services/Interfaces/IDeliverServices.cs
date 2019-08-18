@@ -7,8 +7,10 @@ namespace Services.Interfaces
 {
     public interface IDeliverServices
     {
-        List<Deliver> GetAll();
+        IEnumerable<Deliver> GetAll();
         Deliver GetByKey(Guid key);
         Deliver Insert(Deliver book);
+
+        Deliver Update(Deliver book);
     }
 }
