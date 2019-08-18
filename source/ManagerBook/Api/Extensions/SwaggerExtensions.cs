@@ -17,7 +17,7 @@ namespace ManagerBooks.Applications.Extensions
                 c.SwaggerDoc("v1",
                     new Info
                     {
-                        Title = "ManagerPerson.Api",
+                        Title = "ManagerBooks.Api",
                         Version = "v1",
                         Description = "Sistema para empréstimo de livros",
                         Contact = new Contact
