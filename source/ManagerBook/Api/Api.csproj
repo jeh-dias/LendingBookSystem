@@ -9,6 +9,10 @@
     <DocumentationFile>C:\Users\jeh_d\source\Curso-Programmers\LendingBookSystem\source\ManagerBook\Api\Api.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\jeh_d\source\Curso-Programmers\LendingBookSystem\source\ManagerBook\Api\Api.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
