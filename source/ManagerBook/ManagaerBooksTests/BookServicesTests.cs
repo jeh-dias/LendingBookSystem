@@ -1,4 +1,7 @@
+using Domain;
+using ManagerBooks.Services.Interfaces;
 using Moq;
+using Repository.Interfaces;
 using System;
 using Xunit;
 
@@ -6,35 +9,22 @@ namespace ManagaerBooksTests
 {
         public class BookServicesTest
         {
-        //test
-        //    [Fact]
-        //    public void BookServicesTestSucess()
-        //    {
-        //        var bookBusinessMock = new Mock<IBookBusiness>();
+            [Fact]
+            public void BookServicesTestSucess()
+            {
+                var bookRepository = new Mock<IBookRepository>();
+                var bookServicesMock = new Mock<IBookServices>(bookRepository.Object);
+                var bookEntity = new Book();
 
-        //        reservationBusinessMock.Setup(
-        //            a => a.Add(It.IsAny<Reservation>(), null)).Returns(true);
+               var bookResultServices = bookServicesMock.Setup(
+                    a => a.Insert(It.IsAny<Book>())).Returns(bookEntity);
 
-        //        var reservationsExpectancy = new List<Reservation>
-        //    {
-        //        new Reservation() { Client = "Jessica Dias Rodrigues", DateStart = DateTime.Now, DateEnd = DateTime.Now.AddDays(2)},
-        //        new Reservation() { Client = "Cliente Teste", DateStart = DateTime.Now, DateEnd = DateTime.Now.AddDays(10) }
-        //};
+                var bookResultRepository = bookRepository.Setup(x => x.Insert(It.IsAny<Book>())).Returns(bookEntity);
 
-        //        reservationBusinessMock.Setup(a => a.GetList()).Returns(reservationsExpectancy);
-
-        //        var reservationService = new ReservationService(reservationBusinessMock.Object);
-        //        var reservations = reservationService.Insert(null, null);
-
-        //        Assert.NotNull(reservations);
-        //        Assert.True(reservations.Any());
-
-        //        for (int i = 0; i < reservations.Count; i++)
-        //        {
-        //            Assert.Equal(reservationsExpectancy[i].Client, reservations[i].Client);
-        //            Assert.Equal(reservationsExpectancy[i].DateStart, reservations[i].DateStart);
-        //            Assert.Equal(reservationsExpectancy[i].DateEnd, reservations[i].DateEnd);
-        //        }
-        //    }
+                Assert.NotNull(bookEntity);
+                Assert.NotNull(bookResultServices);
+                Assert.NotNull(bookResultRepository);
+            //Assert.False(bookEntity.key.Equals(string.Empty));
         }
-    }
+        }
+}

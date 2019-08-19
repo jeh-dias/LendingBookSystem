@@ -19,7 +19,7 @@ namespace Domain
 
         public Book()
         {
-
+            this.key = Guid.NewGuid();
         }
         public int isbn { get; set; }
         public string name { get; set; }

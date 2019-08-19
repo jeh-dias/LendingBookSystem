@@ -12,6 +12,11 @@ namespace Domain
     [Table("Lending")]
     public class Lending: Entity
     {
+        public Lending()
+        {
+            dateLending = DateTime.Now;
+            key = Guid.NewGuid();
+        }
         public DateTime dateLending { get; set; }
 
         public DateTime dateDevolution { get; set; }
@@ -23,5 +28,7 @@ namespace Domain
         public string Conditions { get; set; }
 
         public bool Blocked { get; set; }
+
+        public Guid key { get; set; }
     }
 }

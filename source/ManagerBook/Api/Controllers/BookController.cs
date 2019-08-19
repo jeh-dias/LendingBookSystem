@@ -25,6 +25,11 @@ namespace ManagerBooks.Applications.Controllers
             _logger = logger;
         }
 
+        public BookController(IBookServices bookServices)
+        {
+            _bookServices = bookServices;
+        }
+
         /// <summary>
         /// Este método é responsável por retornar todos da entidade livro
         /// que estão no banco de dados
@@ -97,7 +102,7 @@ namespace ManagerBooks.Applications.Controllers
             catch (Exception exception)
             {
                 _logger.LogError(exception, exception.Message);
-                return BadRequest(null);
+                return BadRequest();
             }
         }
 
