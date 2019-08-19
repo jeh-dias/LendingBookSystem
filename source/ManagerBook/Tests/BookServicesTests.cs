@@ -18,9 +18,8 @@ namespace Tests
         [Fact(DisplayName = "Insert success")]
         public void BookServiceInsert()
         {
-            var repository = new Mock<IBookRepository>();
-            var services = new BookServices(repository.Object);
-            var bookResult = repository.Setup(x => x.Insert(It.IsAny<Book>()));
+            var services = new Mock<IBookServices>();
+            var bookResult = services.Setup(x => x.Insert(It.IsAny<Book>()));
 
             Assert.NotNull(bookResult);
         }
@@ -28,9 +27,8 @@ namespace Tests
         [Fact(DisplayName = "GetAll success")]
         public void BookServiceGetAll()
         {
-            var repository = new Mock<IBookRepository>();
-            var services = new BookServices(repository.Object);
-            var bookResult = repository.Setup(x => x.GetAll());
+            var services = new Mock<IBookServices>();
+            var bookResult = services.Setup(x => x.GetAll());
 
             Assert.NotNull(bookResult);
         }
@@ -38,9 +36,8 @@ namespace Tests
         [Fact(DisplayName = "GetByKey success")]
         public void BookServiceGetByKey()
         {
-            var repository = new Mock<IBookRepository>();
-            var services = new BookServices(repository.Object);
-            var bookKey = repository.Setup(x => x.GetByKey(It.IsAny<Guid>()));
+            var services = new Mock<IBookServices>();
+            var bookKey = services.Setup(x => x.GetByKey(It.IsAny<Guid>()));
 
             Assert.NotNull(bookKey);
         }
@@ -48,10 +45,8 @@ namespace Tests
         [Fact(DisplayName = "Update success")]
         public void BookServiceUpdate()
         {
-            var repository = new Mock<IBookRepository>();
-            var services = new BookServices(repository.Object);
-
-            var bookUpdated = repository.Setup(x => x.Update(It.IsAny<Book>()));
+            var services = new Mock<IBookServices>();
+            var bookUpdated = services.Setup(x => x.Update(It.IsAny<Book>()));
 
             Assert.NotNull(bookUpdated);
         }
@@ -59,10 +54,8 @@ namespace Tests
         [Fact(DisplayName = "Delete success")]
         public void BookServiceDelete()
         {
-            var repository = new Mock<IBookRepository>();
-            var services = new BookServices(repository.Object);
-
-            var result = repository.Setup(x => x.Delete(It.IsAny<Book>()));
+            var services = new Mock<IBookServices>();
+            var result = services.Setup(x => x.Delete(It.IsAny<Book>()));
 
             Assert.NotNull(result.Equals(true));
         }

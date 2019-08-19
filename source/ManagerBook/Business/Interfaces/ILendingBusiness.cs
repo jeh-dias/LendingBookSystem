@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Business.Interfaces
 {
-    public interface ILendingBusines
+    public interface ILendingBusiness
     {
         Lending Insert(Lending lending);
 

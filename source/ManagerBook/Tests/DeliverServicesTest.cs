@@ -1,7 +1,7 @@
 ﻿using Domain;
 using Moq;
-using Repository.Interfaces;
 using Services;
+using Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,9 +15,8 @@ namespace Tests
         [Fact(DisplayName = "Insert success")]
         public void DeliverServiceInsert()
         {
-            var repository = new Mock<IDeliverRepository>();
-            var services = new DeliverServices(repository.Object);
-            var deliverResult = repository.Setup(x => x.Insert(It.IsAny<Deliver>()));
+            var services = new Mock<IDeliverServices>();
+            var deliverResult = services.Setup(x => x.Insert(It.IsAny<Deliver>()));
 
             Assert.NotNull(deliverResult);
         }
@@ -25,9 +24,8 @@ namespace Tests
         [Fact(DisplayName = "GetAll success")]
         public void DeliverServiceGetAll()
         {
-            var repository = new Mock<IDeliverRepository>();
-            var services = new DeliverServices(repository.Object);
-            var deiverResult = repository.Setup(x => x.GetAll());
+            var services = new Mock<IDeliverServices>();
+            var deiverResult = services.Setup(x => x.GetAll());
 
             Assert.NotNull(deiverResult);
         }
@@ -35,9 +33,8 @@ namespace Tests
         [Fact(DisplayName = "GetByKey success")]
         public void DeliverServiceGetByKey()
         {
-            var repository = new Mock<IDeliverRepository>();
-            var services = new DeliverServices(repository.Object);
-            var deliverKey = repository.Setup(x => x.GetByKey(It.IsAny<Guid>()));
+            var services = new Mock<IDeliverServices>();
+            var deliverKey = services.Setup(x => x.GetByKey(It.IsAny<Guid>()));
 
             Assert.NotNull(deliverKey);
         }
@@ -45,9 +42,8 @@ namespace Tests
         [Fact(DisplayName = "Update success")]
         public void DeliverServiceUpdate()
         {
-            var repository = new Mock<IDeliverRepository>();
-            var services = new DeliverServices(repository.Object);
-            var deliverUpdated = repository.Setup(x => x.Update(It.IsAny<Deliver>()));
+            var services = new Mock<IDeliverServices>();
+            var deliverUpdated = services.Setup(x => x.Update(It.IsAny<Deliver>()));
 
             Assert.NotNull(deliverUpdated);
         }

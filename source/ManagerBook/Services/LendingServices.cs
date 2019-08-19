@@ -15,10 +15,10 @@ namespace ManagerBooks.Services
     /// </summary>
     public class LendingServices : ILendingServices
     {
-        private readonly ILendingBusines _lendingBusiness;
+        private readonly ILendingBusiness _lendingBusiness;
         private readonly ILendingRepository _lendingRepository;
 
-        public LendingServices(ILendingBusines lendingBusiness, ILendingRepository lendingRepository)
+        public LendingServices(ILendingBusiness lendingBusiness, ILendingRepository lendingRepository)
         {
             _lendingBusiness = lendingBusiness;
             _lendingRepository = lendingRepository;
