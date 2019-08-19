@@ -73,7 +73,7 @@ namespace ManagerBooks.Applications.Controllers
         /// <param name="lending"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<Lending> Post([FromBody] Lending lending)
+        public ActionResult<Lending> Insert([FromBody] Lending lending)
         {
             try
             {

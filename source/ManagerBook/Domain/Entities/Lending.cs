@@ -18,6 +18,8 @@ namespace Domain
 
         public int PersonID { get; set; }
 
+        public int BookID { get; set; }
+
         public string Conditions { get; set; }
 
         public bool Blocked { get; set; }

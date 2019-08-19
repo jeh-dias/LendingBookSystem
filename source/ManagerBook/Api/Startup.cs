@@ -39,32 +39,6 @@ namespace Api
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             DependencyInjections(services);
             services.SwaggerServices();
-
-            // Configurando o serviço de documentação do Swagger
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1",
-            //        new Info
-            //        {
-            //            Title = "ManagerPerson.Api",
-            //            Version = "v1",
-            //            Description = "Sistema para empréstimo de livros",
-            //            Contact = new Contact
-            //            {
-            //                Name = "Jéssica Dias",
-            //                Url = "https://github.com/jeh-dias"
-            //            }
-            //        });
-
-            //    string caminhoAplicacao =
-            //        PlatformServices.Default.Application.ApplicationBasePath;
-            //    string nomeAplicacao =
-            //        PlatformServices.Default.Application.ApplicationName;
-            //    string caminhoXmlDoc =
-            //        Path.Combine(caminhoAplicacao, $"{nomeAplicacao}.xml");
-
-            //    c.IncludeXmlComments(caminhoXmlDoc);
-            //});
         }
 
         private void DependencyInjections(IServiceCollection services)
@@ -72,9 +46,11 @@ namespace Api
             services.AddSingleton<IPersonRepository, PersonRepository>();
             services.AddSingleton<IBookRepository, BookRepository>();
             services.AddSingleton<ILendingRepository, LendingRepository>();
+            services.AddSingleton<IDeliverRepository, DeliverRepository>();
             services.AddTransient<IPersonServices, PersonServices>();
             services.AddTransient<IBookServices, BookServices>();
             services.AddTransient<ILendingServices, LendingServices>();
+            services.AddTransient<IDeliverServices, DeliverServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

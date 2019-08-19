@@ -42,7 +42,13 @@ namespace ManagerBooks.Applications.Controllers
             catch (Exception exception)
             {
                 _logger.LogError(exception, exception.Message);
-                return BadRequest();
+
+                return NotFound(
+                    new
+                    {
+                        Mensagem = "Não há livros inexistente.",
+                        Erro = true
+                    });
             }
         }
 
@@ -66,7 +72,12 @@ namespace ManagerBooks.Applications.Controllers
             catch (Exception exception)
             {
                 _logger.LogError(exception, exception.Message);
-                return BadRequest();
+                return NotFound(
+                    new
+                    {
+                        Mensagem = "Código de livro inválido ou item inexistente.",
+                        Erro = true
+                    });
             }
         }
 

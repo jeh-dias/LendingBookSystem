@@ -1,5 +1,6 @@
 ﻿using Domain;
 using Repository;
+using Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,9 +14,9 @@ namespace Business
     {
         private const int totalDaysWeek = 7;
 
-        private readonly LendingRepository _lendingRepository;
+        private readonly ILendingRepository _lendingRepository;
 
-        public LendingBusiness(LendingRepository lendingRepository)
+        public LendingBusiness(ILendingRepository lendingRepository)
         {
             _lendingRepository = lendingRepository;
         }

@@ -98,7 +98,7 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:ManagerBooks.Applications.Controllers.LendingController.Post(Domain.Lending)">
+        <member name="M:ManagerBooks.Applications.Controllers.LendingController.Insert(Domain.Lending)">
             <summary>
             Método responsável por interagir com o método Insert do serviço
             </summary>
