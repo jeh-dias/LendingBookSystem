@@ -21,3 +21,6 @@ https://lending.azurewebsites.net/docs
 ## Banco de dados postgres disponível no Google Cloud Plataform 
 1. Endereço público 35.199.92.78
 2. Nome da conexão de instância: projeto-final-arquitetura-net:southamerica-east1:instance-arquitetura
+
+## Projeto Front
+https://github.com/jeh-dias/LendingBookSystemFront
